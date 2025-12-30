@@ -1,0 +1,138 @@
+.pagebox {
+  padding: 40px 20px;
+  min-height: 80vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.pagebox h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #333;
+  font-size: 32px;
+}
+
+.add-item-btn {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-item-btn:hover {
+  background-color: #21867a;
+  transform: scale(1.05);
+}
+
+.gridbox {
+  display: grid;
+  grid-template-columns: 1fr; /* one card per row for max size */
+  gap: 40px;
+  max-width: 800px; /* center content */
+  margin: 0 auto;
+}
+
+.itembox {
+  border-radius: 12px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
+  border: 2px solid rgba(0, 0, 0, 0.8); /* more visible black border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+}
+
+.itembox:hover {
+  transform: translateY(-5px);
+  border: 2px solid rgba(0, 0, 0, 1); /* fully black on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* stronger shadow on hover */
+}
+
+.item-img {
+  width: 100%;
+  height: 300px; /* make image bigger */
+  object-fit: cover;
+}
+
+.item-info {
+  padding: 20px;
+}
+
+.itembox h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 26px;
+}
+
+.itembox p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.price {
+  font-weight: bold;
+  color: #e67e22;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-start; /* buttons on left */
+  gap: 15px;
+  padding: 15px 20px;
+}
+
+.button-row button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.button-row .update-btn {
+  background-color: #2a9d8f;
+}
+
+.button-row .update-btn:hover {
+  background-color: #21867a;
+  transform: scale(1.05);
+}
+
+.button-row .delete-btn {
+  background-color: #e76f51;
+}
+
+.button-row .delete-btn:hover {
+  background-color: #d35441;
+  transform: scale(1.05);
+}
+
+.view-pic-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.view-pic-btn:hover {
+  background-color: #2980b9;
+}

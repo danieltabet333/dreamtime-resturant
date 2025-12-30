@@ -1,0 +1,52 @@
+.pagebox {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.12);
+}
+
+.pagebox h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.pagebox p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.home-pic {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.menu-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menu-btn {
+  display: inline-block;
+  background-color: #ff6347; /* theme color */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #e0523a;
+  transform: scale(1.05);
+}
