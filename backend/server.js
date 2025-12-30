@@ -9,8 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// serve static images
-app.use(express.static("images"));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
 
 // multer setup for file uploads
 const storage = multer.diskStorage({
@@ -26,15 +29,19 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-// MySQL connection
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dreamtime",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT, // Add the custom port
+  ssl: {
+    ca: fs.readFileSync(path.join(process.cwd(), 'ca-certificate.crt'))
+  }
 });
 
-// --------- API ROUTES ---------
+// --------- API ROUTES ---------s
 
 // GET all menu items
 app.get("/menu", (req, res) => {
@@ -108,7 +115,8 @@ app.post("/menu/:id", upload.single("image"), (req, res) => {
   });
 });
 
-// --------- START SERVER ---------
-app.listen(5000, () => {
-  console.log("Backend connected on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
 });
+
